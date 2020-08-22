@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="bootstrap/4-5-0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="w3css/4/w3.css">
+    	<link rel="stylesheet" href="leaflet_1-3-4/dist/leaflet.css" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap" rel="stylesheet">
+	<script src="leaflet_1-3-4/dist/leaflet.js" crossorigin="">
+  </script>
+  </head>
+  <body>
+<div class="w3-bar w3-light blue" style = "font-family: 'Montserrat Alternates', sans-serif;"> <a href="index.html" class="w3-bar-item w3-button w3-mobile"><font size="+1">Home</font></a> 
+<a href="about.html" class="w3-bar-item w3-button w3-mobile"><font size="+1">About</font></a>
+<a href="map.html" class="w3-bar-item w3-button w3-mobile"><font size="+1">Map</font></a>
+</div>
+<div id="mapid" style="height: 580px; width: 70%; margin: 35px; border-radius: 13px;"></div>
+<script>
+	 var mymap = L.map('mapid').setView([29.874, -95.534], 10.40);
+   L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+}).addTo(mymap);
+	</script>
+<h5 style = "font-family: 'Montserrat Alternates', sans-serif;margin-left:83%;margin-top:-35%" = >Map Key</h5>
+<div class="card mb-3" style="max-width: 500px;margin-left:76%; width:20%">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="originals/ea/56/e3/ea56e3ce387edc4fb87963b0c6d757a1.png" class="card-img" style="width:40%;margin-left:50%;margin-top:10%" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text" style ="font-family: 'Montserrat Alternates', sans-serif">Grocery Stores</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3" style="max-width: 540px;margin-left:76%; width:20%">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="data/icons/line-essentials-64/20/3173-512.png" class="card-img" style="width:40%;margin-left:50%;margin-top:8%" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text" style ="font-family: 'Montserrat Alternates', sans-serif">Healthcare</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3" style="max-width: 540px;margin-left:76%; width:20%">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="originals/4c/ee/21/4cee2121c36013527f60f55994b1e679.png" class="card-img" style="width:40%;margin-left:50%;margin-top:8%" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text" style ="font-family: 'Montserrat Alternates', sans-serif">Restaurants</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3" style="max-width: 540px;margin-left:76%; width:20%">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="data/icons/market-and-economics-19/48/77-512.png" class="card-img" style="width:40%;margin-left:50%;margin-top:8%" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text" style ="font-family: 'Montserrat Alternates', sans-serif">Financial Aid</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3" style="max-width: 540px;margin-left:76%; width:20%">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="png/646717-200.png" class="card-img" style="width:40%;margin-left:50%;margin-top:8%" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text" style ="font-family: 'Montserrat Alternates', sans-serif">Resource Centers</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="ajax/libs/apexcharts/3-20-0/apexcharts.min.js"></script>
+  </head>
+  <body>
+        <script type="text/javascript" src="charts/loader.js" ></script>
+    <script type="text/javascript" >
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Unemployment Percentage'],
+          ['Janurary 31, 2020	',  4.10],
+          ['Feburary 29, 2020	',  3.90],
+          ['March 31, 2020	',  5.60],
+          ['April 30, 2020',  14.60],
+          ['May 31, 2020',  14.40],
+          ['June 30, 2020',  10.30]
+        ]);
+        var options = {
+          title: 'Unempolyment Percentage in Harris County',
+          curveType: '',
+          legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <div id="curve_chart" style="width: 900px; height: 500px;margin-top:8%;margin-left:-7%"></div>
+    <script type="text/javascript" src="charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Cities', 'Case', 'Deaths',{ role: 'style'} ],
+          ['Houston County', 323, 7, 'stroke-color: #703593; stroke-width: 4; fill-color: #C5A5CF'],
+          ['Bexar County', 44005 , 887, 'stroke-color: #703593; stroke-width: 4; fill-color: #C5A5CF'],
+          ['Dallas County', 58067, 824, 'stroke-color: #703593; stroke-width: 4; fill-color: #C5A5CF'],
+          ['Austin County', 328, 4, 'stroke-color: #703593; stroke-width: 4; fill-color: #C5A5CF']
+        ]);
+        var options = {
+          chart: {
+            title: 'Cases and Deaths in Harris County',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <div id="barchart_material" style="width: 900px; height: 500px;margin-top:-29%;margin-left:40%"></div>
+<script src="mapdetails.js"></script>
+<h1>   </h1>
+  </body>
